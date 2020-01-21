@@ -1,7 +1,6 @@
 # Utility Functions For Use with Math.random
 
-This is the code distribution for the Medium article _Some Random Thoughts(url)_.
-
+This is the code distribution for the Medium article _Some Random Thoughts_.
 
 Author:  Jim Armstrong - [The Algorithmist]
 
