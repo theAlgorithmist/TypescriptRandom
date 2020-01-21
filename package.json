@@ -1,0 +1,26 @@
+{
+  "name": "RandomUtilities",
+  "version": "1.0.0",
+  "description": "Some Typescript utilities for dealing with operations on pseudo-random integers",
+  "keywords": [
+    "Typescript",
+    "Programming",
+    "Math",
+    "Random"
+  ],
+  "author": "Jim Armstrong (www.algorithmist.net)",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "tsc -p ./src",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "24.9.0",
+    "jest": "24.9.0",
+    "ts-jest": "24.3.0",
+    "typescript": "3.4.5"
+  },
+  "dependencies": {
+    "@types/core-js": "0.9.34"
+  }
+}
