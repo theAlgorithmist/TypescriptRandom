@@ -34,9 +34,9 @@ describe("Random Integer in Range", () => {
   let i1: number = 0;
   let i2: number = 3;
   let f0: number = 0;
-  let f1: number = 1;
+  let f1: number = 0;
 
-  for (i=0; i<10000; ++i)
+  for (i = 0; i < 10000; ++i)
   {
     x = i1 + Math.round(Math.random()*(i2-i1));
 
@@ -51,13 +51,11 @@ describe("Random Integer in Range", () => {
   console.log( "1 & 2 frequency: ", f1 );
   console.log( "ratio: ", ratio1 );
 
-  // use the Typescript Math Toolkit random integer in range class - note here that the ratio is close to 1 so that 0 or 3 is about as likely
-  // as 1 or 2.
   let generator: TSMT$RandomIntInRange = new TSMT$RandomIntInRange(0, 3);
   f0 = 0;
   f1 = 0;
 
-  for (i=0; i<10000; ++i)
+  for (i = 0; i < 10000; ++i)
   {
     x = generator.generate();
 
