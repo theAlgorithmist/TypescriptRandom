@@ -36,12 +36,13 @@ Specs (random.spec.ts) reside in the ___tests___ folder.
 
 ### Introduction
 
-This repo contains a small number of Typescript utilities for dealing with computations involving random processes, some of which were moved over from the _Typescript Math Toolkit_.  Four classes are provided,
+This repo contains a small number of Typescript utilities for dealing with computations involving random processes, some of which were moved over from the _Typescript Math Toolkit_.  The following classes/functions are provided,
 
 - TSMT$RandomIntInRange
 - TSMT$Bin
 - TSMT$Deviates
 - SeededRng
+- fisher-yates
 
 Usage and API are covered in the _Medium_ article.
 
