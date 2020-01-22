@@ -31,12 +31,12 @@ import { TSMT$RandomIntInRange } from "./RandomIntInRange";
 export function fisherYates(a: Array<any>): Array<any>
 {
   if (a === undefined || a == null) {
-    return;
+    return [];
   }
 
   const n: number = a.length;
   if (n == 0) {
-    return;
+    return [];
   }
 
   let i: number;

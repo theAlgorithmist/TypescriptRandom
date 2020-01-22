@@ -22,6 +22,7 @@ import { TSMT$RandomIntInRange } from "../src/RandomIntInRange";
 import { TSMT$Bin              } from "../src/Binning";
 import { SeededRng             } from "../src/SeededRng";
 import { TSMT$Deviates         } from "../src/deviates";
+import { fisherYates           } from "../src/fisher-yates";
 
 import "jest";
 
@@ -195,8 +196,58 @@ describe("Deviates Tests", () => {
     // normal curve is above x axis
     expect(deviate).toBeGreaterThan(0);
 
+    // max-value is 1/sqrt(sigma*2PI)
+    expect(deviate).toBeLessThanOrEqual(1/(std*SQRT_TWO_PI));
+
     // all subsequent deviates
     deviate = deviates.normal(90210, mu, std, false);
     expect(deviate).toBeGreaterThan(0);
+    expect(deviate).toBeLessThanOrEqual(1/(std*SQRT_TWO_PI));
+  });
+});
+
+describe("Fisher Yates", () => {
+
+  // Complete test for the statistical quality of a shuffle is well beyond the scope of these specs; the following
+  // code illustrates usage of the Fisher-Yates algorithm
+  test('returns empty array for null argument', () => {
+    const result: Array<any> = fisherYates(null);
+
+    expect(result.length).toBe(0);
+  });
+
+  test('returns empty array for undefined argument', () => {
+    const result: Array<any> = fisherYates(undefined);
+
+    expect(result.length).toBe(0);
+  });
+
+  // this test is trivial
+  test('correctly shuffles', () => {
+    const result: Array<any> = fisherYates([
+      {
+        id: 0,
+        value: 'a'
+      },
+      {
+        id: 1,
+        value: 'b'
+      },
+      {
+        id: 2,
+        value: 'c'
+      },
+      {
+        id: 3,
+        value: 'd'
+      }
+    ]);
+
+    expect(result.length).toBeGreaterThan(0);
+
+    const temp: object = result[0] as object;
+    const id: number   = temp['id'] as number;
+
+    expect(id === 0 || id === 1 || id === 2 || id === 3).toBe(true);
   });
 });
