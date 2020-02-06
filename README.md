@@ -1,6 +1,6 @@
 # Utility Functions For Use with Math.random
 
-This is the code distribution for the Medium article _Some Random Thoughts_.
+This is the code distribution for the Medium article [_Random thoughts on randomization in TypeScript_](https://medium.com/ngconf/random-thoughts-on-randomization-in-typescript-2fab94ea0f12).
 
 Author:  Jim Armstrong - [The Algorithmist]
 
